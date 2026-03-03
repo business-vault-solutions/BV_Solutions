@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataVault Solutions | Data Warehousing & Reporting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:  { DEFAULT: '#1e3a5f', light: '#2a5080', dark: '#142840' },
+            accent:   { DEFAULT: '#f59e0b', light: '#fbbf24', dark: '#d97706' },
+            surface:  '#f8fafc',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg {
+      background: linear-gradient(135deg, #142840 0%, #1e3a5f 50%, #2a5080 100%);
+    }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 2px;
+      background: #f59e0b;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after { width: 100%; }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+  <!-- ── NAVBAR ─────────────────────────────────────────────────────────── -->
+  <nav class="bg-primary fixed w-full top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-accent rounded-lg flex items-center justify-center">
+          <i class="fa-solid fa-database text-white text-sm"></i>
+        </div>
+        <span class="text-white font-bold text-xl tracking-tight">
+          DataVault <span class="text-accent">Solutions</span>
+        </span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"    class="nav-link active text-white text-sm font-medium pb-1">Home</a>
+        <a href="services.html" class="nav-link text-gray-300 hover:text-white text-sm font-medium pb-1">Services</a>
+        <a href="about.html"    class="nav-link text-gray-300 hover:text-white text-sm font-medium pb-1">About</a>
+        <a href="contact.html"  class="nav-link text-gray-300 hover:text-white text-sm font-medium pb-1">Contact</a>
+        <a href="contact.html" class="bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-5 py-2 rounded-lg transition">
+          Get a Quote
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="md:hidden text-white text-xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-primary-dark px-6 pb-4 flex flex-col gap-3">
+      <a href="index.html"    class="text-white text-sm py-2 border-b border-gray-700">Home</a>
+      <a href="services.html" class="text-gray-300 text-sm py-2 border-b border-gray-700">Services</a>
+      <a href="about.html"    class="text-gray-300 text-sm py-2 border-b border-gray-700">About</a>
+      <a href="contact.html"  class="text-gray-300 text-sm py-2">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────────────────────── -->
+  <section class="hero-bg min-h-screen flex items-center pt-16">
+    <div class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="inline-block bg-accent/20 text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+          Data · Insights · Results
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+          Turn Raw Data Into <span class="text-accent">Strategic Power</span>
+        </h1>
+        <p class="text-gray-300 text-lg leading-relaxed mb-8">
+          We specialise in data warehousing, business intelligence, and reporting solutions
+          — with deep expertise in <strong class="text-white">mining industry data</strong>.
+          From pit to boardroom, we make your data work for you.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="services.html" class="bg-accent hover:bg-accent-dark text-white font-semibold px-7 py-3 rounded-lg transition shadow-lg">
+            Explore Services
+          </a>
+          <a href="contact.html" class="border border-white/40 hover:border-white text-white font-semibold px-7 py-3 rounded-lg transition">
+            Talk to Us
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 mt-14 pt-8 border-t border-white/20">
+          <div>
+            <p class="text-3xl font-extrabold text-accent">50+</p>
+            <p class="text-gray-400 text-sm mt-1">Projects Delivered</p>
+          </div>
+          <div>
+            <p class="text-3xl font-extrabold text-accent">10+</p>
+            <p class="text-gray-400 text-sm mt-1">Industry Sectors</p>
+          </div>
+          <div>
+            <p class="text-3xl font-extrabold text-accent">100%</p>
+            <p class="text-gray-400 text-sm mt-1">Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual -->
+      <div class="hidden md:flex justify-center">
+        <div class="relative w-80 h-80">
+          <!-- Outer ring -->
+          <div class="absolute inset-0 rounded-full border-2 border-accent/30 animate-spin" style="animation-duration:20s;"></div>
+          <!-- Middle ring -->
+          <div class="absolute inset-8 rounded-full border-2 border-accent/20 animate-spin" style="animation-duration:15s; animation-direction:reverse;"></div>
+          <!-- Center icon -->
+          <div class="absolute inset-16 bg-accent/10 rounded-full flex items-center justify-center backdrop-blur">
+            <i class="fa-solid fa-chart-line text-accent text-5xl"></i>
+          </div>
+          <!-- Floating icons -->
+          <div class="absolute top-4 right-4 bg-white/10 backdrop-blur rounded-xl p-3">
+            <i class="fa-solid fa-database text-accent text-xl"></i>
+          </div>
+          <div class="absolute bottom-8 left-2 bg-white/10 backdrop-blur rounded-xl p-3">
+            <i class="fa-solid fa-hard-hat text-accent text-xl"></i>
+          </div>
+          <div class="absolute top-1/2 right-0 bg-white/10 backdrop-blur rounded-xl p-3">
+            <i class="fa-solid fa-server text-accent text-xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES OVERVIEW ──────────────────────────────────────────────── -->
+  <section class="py-24 bg-surface">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-accent font-semibold text-sm uppercase tracking-widest">What We Do</span>
+        <h2 class="text-4xl font-extrabold text-primary mt-2">Our Core Services</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">End-to-end data solutions designed for organisations that need accuracy, speed, and insight.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="card-hover bg-white rounded-2xl shadow p-8 border border-gray-100">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-warehouse text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">Data Warehousing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Design and build scalable, centralised data warehouses using star/snowflake schemas.
+            Consolidate data from multiple sources into a single source of truth.
+          </p>
+          <a href="services.html#warehousing" class="mt-5 inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all">
+            Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-hover bg-white rounded-2xl shadow p-8 border border-gray-100">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-chart-bar text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">BI & Reporting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Interactive dashboards and automated reports using Power BI, Dash, and custom tools.
+            Deliver the right insight to the right person at the right time.
+          </p>
+          <a href="services.html#reporting" class="mt-5 inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all">
+            Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-hover bg-white rounded-2xl shadow p-8 border border-gray-100">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-gears text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">ETL Pipelines</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Automated Extract, Transform, Load pipelines that keep your data fresh, clean,
+            and ready for analysis — without manual intervention.
+          </p>
+          <a href="services.html#etl" class="mt-5 inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all">
+            Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-hover bg-white rounded-2xl shadow p-8 border border-gray-100">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-hard-hat text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">Mining Data Analytics</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Specialised analytics for drill hole data, assay QAQC, grade-tonnage curves,
+            production KPIs, and shift reporting across mining operations.
+          </p>
+          <a href="services.html#mining" class="mt-5 inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all">
+            Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card-hover bg-white rounded-2xl shadow p-8 border border-gray-100">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-lightbulb text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">Problem Solving & Consulting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Custom data strategies, root cause analysis, and bespoke solutions
+            for complex operational and reporting challenges.
+          </p>
+          <a href="services.html#consulting" class="mt-5 inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all">
+            Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card-hover bg-white rounded-2xl shadow p-8 border border-gray-100">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-shield-halved text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-3">Data Quality & Governance</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Data profiling, validation frameworks, and governance policies to ensure
+            your data is accurate, consistent, and audit-ready.
+          </p>
+          <a href="services.html#governance" class="mt-5 inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all">
+            Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ─────────────────────────────────────────────────────────── -->
+  <section class="py-24 bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="text-accent font-semibold text-sm uppercase tracking-widest">Why Choose Us</span>
+        <h2 class="text-4xl font-extrabold mt-2 mb-6">We Understand Your Data <span class="text-accent">And Your Industry</span></h2>
+        <p class="text-gray-300 leading-relaxed mb-8">
+          Unlike generic IT firms, we bring domain expertise in mining operations alongside
+          cutting-edge data engineering skills. We speak both languages — geology and SQL.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-white text-xs"></i>
+            </span>
+            <span class="text-gray-300">Industry-specific data models built for mining workflows</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-white text-xs"></i>
+            </span>
+            <span class="text-gray-300">Python-powered automation for repeatable, scalable pipelines</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-white text-xs"></i>
+            </span>
+            <span class="text-gray-300">Transparent process — you own your data and your infrastructure</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-white text-xs"></i>
+            </span>
+            <span class="text-gray-300">Solutions designed to grow with your business</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tech stack badges -->
+      <div class="grid grid-cols-3 gap-4">
+        <div class="bg-white/10 rounded-2xl p-5 text-center backdrop-blur">
+          <i class="fa-brands fa-python text-accent text-3xl mb-2"></i>
+          <p class="text-sm font-semibold">Python</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-5 text-center backdrop-blur">
+          <i class="fa-solid fa-database text-accent text-3xl mb-2"></i>
+          <p class="text-sm font-semibold">SQL / PostgreSQL</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-5 text-center backdrop-blur">
+          <i class="fa-solid fa-chart-pie text-accent text-3xl mb-2"></i>
+          <p class="text-sm font-semibold">Power BI</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-5 text-center backdrop-blur">
+          <i class="fa-solid fa-code-branch text-accent text-3xl mb-2"></i>
+          <p class="text-sm font-semibold">dbt</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-5 text-center backdrop-blur">
+          <i class="fa-solid fa-cloud text-accent text-3xl mb-2"></i>
+          <p class="text-sm font-semibold">Cloud Ready</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-5 text-center backdrop-blur">
+          <i class="fa-solid fa-hard-hat text-accent text-3xl mb-2"></i>
+          <p class="text-sm font-semibold">Mining Domain</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────────────────────── -->
+  <section class="py-20 bg-accent">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold text-white mb-4">Ready to Unlock Your Data's Potential?</h2>
+      <p class="text-white/80 text-lg mb-8">Let's have a conversation about your data challenges. No obligation, just clarity.</p>
+      <a href="contact.html" class="inline-block bg-white text-accent font-bold px-10 py-4 rounded-xl hover:shadow-xl transition text-lg">
+        Start a Conversation
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer class="bg-primary-dark text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
+            <i class="fa-solid fa-database text-white text-xs"></i>
+          </div>
+          <span class="text-white font-bold text-lg">DataVault <span class="text-accent">Solutions</span></span>
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs">
+          Transforming raw operational data into actionable intelligence for mining and resource companies.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Services</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="services.html#warehousing" class="hover:text-accent transition">Data Warehousing</a></li>
+          <li><a href="services.html#reporting"   class="hover:text-accent transition">BI & Reporting</a></li>
+          <li><a href="services.html#etl"          class="hover:text-accent transition">ETL Pipelines</a></li>
+          <li><a href="services.html#mining"       class="hover:text-accent transition">Mining Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html"   class="hover:text-accent transition">About Us</a></li>
+          <li><a href="contact.html" class="hover:text-accent transition">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 mt-10 pt-6 border-t border-white/10 text-center text-sm">
+      &copy; 2025 DataVault Solutions. All rights reserved. &mdash; <em>Company name placeholder &mdash; to be updated.</em>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

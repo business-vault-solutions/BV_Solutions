@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | DataVault Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#1e3a5f', light: '#2a5080', dark: '#142840' },
+            accent:  { DEFAULT: '#f59e0b', light: '#fbbf24', dark: '#d97706' },
+            surface: '#f8fafc',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .nav-link::after {
+      content:''; position:absolute; bottom:-2px; left:0;
+      width:0; height:2px; background:#f59e0b; transition:width .3s;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width:100%; }
+    .nav-link { position:relative; }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+  <!-- NAVBAR -->
+  <nav class="bg-primary fixed w-full top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-accent rounded-lg flex items-center justify-center">
+          <i class="fa-solid fa-database text-white text-sm"></i>
+        </div>
+        <span class="text-white font-bold text-xl tracking-tight">DataVault <span class="text-accent">Solutions</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"    class="nav-link text-gray-300 hover:text-white text-sm font-medium pb-1">Home</a>
+        <a href="services.html" class="nav-link active text-white text-sm font-medium pb-1">Services</a>
+        <a href="about.html"    class="nav-link text-gray-300 hover:text-white text-sm font-medium pb-1">About</a>
+        <a href="contact.html"  class="nav-link text-gray-300 hover:text-white text-sm font-medium pb-1">Contact</a>
+        <a href="contact.html" class="bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-5 py-2 rounded-lg transition">Get a Quote</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white text-xl"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-primary-dark px-6 pb-4 flex flex-col gap-3">
+      <a href="index.html"    class="text-gray-300 text-sm py-2 border-b border-gray-700">Home</a>
+      <a href="services.html" class="text-white text-sm py-2 border-b border-gray-700">Services</a>
+      <a href="about.html"    class="text-gray-300 text-sm py-2 border-b border-gray-700">About</a>
+      <a href="contact.html"  class="text-gray-300 text-sm py-2">Contact</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-primary pt-32 pb-16 text-white text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <span class="text-accent font-semibold text-sm uppercase tracking-widest">What We Offer</span>
+      <h1 class="text-5xl font-extrabold mt-2 mb-4">Our Services</h1>
+      <p class="text-gray-300 text-lg">
+        Comprehensive data solutions from raw extraction through to polished executive dashboards.
+        Built specifically for data-intensive industries.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 1: DATA WAREHOUSING ────────────────────────────────────── -->
+  <section id="warehousing" class="py-20 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-solid fa-warehouse text-primary text-3xl"></i>
+        </div>
+        <span class="text-accent font-semibold text-sm uppercase tracking-widest">Service 01</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-1 mb-4">Data Warehousing</h2>
+        <p class="text-gray-500 leading-relaxed mb-6">
+          We design and build centralised data warehouses that consolidate data from disparate systems —
+          drill hole databases, ERP systems, SCADA, lab systems, and spreadsheets — into a single,
+          reliable source of truth.
+        </p>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Star & snowflake schema design</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Historical data migration & archiving</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> PostgreSQL, SQL Server, SQLite implementations</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Cloud-ready architecture (Azure, AWS)</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Dimension & fact table modelling</li>
+        </ul>
+        <a href="contact.html" class="mt-8 inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-light transition">
+          Enquire About This Service
+        </a>
+      </div>
+      <div class="bg-primary rounded-2xl p-8 text-white">
+        <h3 class="text-lg font-bold text-accent mb-4">Typical Deliverables</h3>
+        <div class="space-y-4">
+          <div class="bg-white/10 rounded-xl p-4">
+            <p class="font-semibold text-sm">Data Architecture Document</p>
+            <p class="text-gray-300 text-xs mt-1">Schema diagrams, entity-relationship models, data dictionary</p>
+          </div>
+          <div class="bg-white/10 rounded-xl p-4">
+            <p class="font-semibold text-sm">Configured Database</p>
+            <p class="text-gray-300 text-xs mt-1">Fully deployed warehouse with indexes, views, and access controls</p>
+          </div>
+          <div class="bg-white/10 rounded-xl p-4">
+            <p class="font-semibold text-sm">Data Migration Scripts</p>
+            <p class="text-gray-300 text-xs mt-1">Python/SQL scripts for loading historical data</p>
+          </div>
+          <div class="bg-white/10 rounded-xl p-4">
+            <p class="font-semibold text-sm">Maintenance Documentation</p>
+            <p class="text-gray-300 text-xs mt-1">Runbooks and handover guides for your team</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 2: BI & REPORTING ──────────────────────────────────────── -->
+  <section id="reporting" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+      <div class="order-2 md:order-1 bg-surface rounded-2xl p-8 border border-gray-100">
+        <h3 class="text-lg font-bold text-primary mb-4">Reporting Formats We Deliver</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+            <i class="fa-solid fa-chart-bar text-accent text-2xl mb-2"></i>
+            <p class="text-sm font-semibold text-primary">Power BI Dashboards</p>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+            <i class="fa-solid fa-globe text-accent text-2xl mb-2"></i>
+            <p class="text-sm font-semibold text-primary">Web Dashboards (Dash)</p>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+            <i class="fa-solid fa-file-pdf text-accent text-2xl mb-2"></i>
+            <p class="text-sm font-semibold text-primary">Automated PDF Reports</p>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+            <i class="fa-solid fa-file-excel text-accent text-2xl mb-2"></i>
+            <p class="text-sm font-semibold text-primary">Excel Reports</p>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+            <i class="fa-solid fa-envelope text-accent text-2xl mb-2"></i>
+            <p class="text-sm font-semibold text-primary">Scheduled Email Reports</p>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+            <i class="fa-solid fa-mobile text-accent text-2xl mb-2"></i>
+            <p class="text-sm font-semibold text-primary">Mobile-Friendly Views</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-solid fa-chart-bar text-primary text-3xl"></i>
+        </div>
+        <span class="text-accent font-semibold text-sm uppercase tracking-widest">Service 02</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-1 mb-4">Business Intelligence & Reporting</h2>
+        <p class="text-gray-500 leading-relaxed mb-6">
+          Transform your warehouse data into compelling visual stories. We build interactive dashboards
+          and automated reports that give management, supervisors, and field teams exactly what they need —
+          when they need it.
+        </p>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Power BI report development & DAX authoring</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Python Dash web dashboards</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Scheduled automated report delivery</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> KPI design and metric definition</li>
+        </ul>
+        <a href="contact.html" class="mt-8 inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-light transition">
+          Enquire About This Service
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 3: ETL ─────────────────────────────────────────────────── -->
+  <section id="etl" class="py-20 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-solid fa-gears text-primary text-3xl"></i>
+        </div>
+        <span class="text-accent font-semibold text-sm uppercase tracking-widest">Service 03</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-1 mb-4">ETL Pipeline Development</h2>
+        <p class="text-gray-500 leading-relaxed mb-6">
+          Stop manually copying data between systems. We build robust, automated Extract–Transform–Load
+          pipelines in Python that run on schedule, handle errors gracefully, and keep your warehouse
+          always up to date.
+        </p>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Python-based ETL scripts (pandas, SQLAlchemy)</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> dbt transformations on top of your warehouse</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Scheduled via Task Scheduler, cron, or Airflow</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Excel, CSV, API, database source connectors</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Error alerting and logging</li>
+        </ul>
+        <a href="contact.html" class="mt-8 inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-light transition">
+          Enquire About This Service
+        </a>
+      </div>
+      <div class="bg-primary-dark rounded-2xl p-6 font-mono text-sm overflow-x-auto text-green-300">
+        <p class="text-gray-500 text-xs mb-3"># example_pipeline.py</p>
+        <p><span class="text-blue-400">import</span> pandas <span class="text-blue-400">as</span> pd</p>
+        <p><span class="text-blue-400">from</span> sqlalchemy <span class="text-blue-400">import</span> create_engine</p>
+        <br />
+        <p><span class="text-yellow-300">def</span> <span class="text-green-300">run_pipeline</span>():</p>
+        <p class="ml-4 text-gray-300"># Extract</p>
+        <p class="ml-4">df = pd.read_excel(<span class="text-orange-300">"shift_report.xlsx"</span>)</p>
+        <br />
+        <p class="ml-4 text-gray-300"># Transform</p>
+        <p class="ml-4">df = df.dropna(subset=[<span class="text-orange-300">"grade"</span>])</p>
+        <p class="ml-4">df[<span class="text-orange-300">"date"</span>] = pd.to_datetime(df[<span class="text-orange-300">"date"</span>])</p>
+        <br />
+        <p class="ml-4 text-gray-300"># Load</p>
+        <p class="ml-4">engine = create_engine(<span class="text-orange-300">"postgresql://..."</span>)</p>
+        <p class="ml-4">df.to_sql(<span class="text-orange-300">"production"</span>, engine,</p>
+        <p class="ml-10">if_exists=<span class="text-orange-300">"append"</span>)</p>
+        <br />
+        <p class="ml-4 text-green-400">print(<span class="text-orange-300">"Pipeline complete ✓"</span>)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 4: MINING ANALYTICS ───────────────────────────────────── -->
+  <section id="mining" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+          <i class="fa-solid fa-hard-hat text-primary text-3xl"></i>
+        </div>
+        <span class="text-accent font-semibold text-sm uppercase tracking-widest">Service 04</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-1 mb-4">Mining Data Analytics</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+          Built specifically for the resources sector. We understand the data that comes out of the ground
+          and the decisions that need to be made with it.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+          <i class="fa-solid fa-layer-group text-accent text-2xl mb-4"></i>
+          <h3 class="font-bold text-primary mb-2">Drill Hole Data</h3>
+          <p class="text-gray-500 text-sm">Collar, survey, and assay management. QAQC workflows, duplicate analysis, standard comparisons.</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+          <i class="fa-solid fa-truck text-accent text-2xl mb-4"></i>
+          <h3 class="font-bold text-primary mb-2">Production KPIs</h3>
+          <p class="text-gray-500 text-sm">Tonnes mined, processed, and recovered. Grade reconciliation, shift vs plan analysis, equipment utilisation.</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+          <i class="fa-solid fa-flask text-accent text-2xl mb-4"></i>
+          <h3 class="font-bold text-primary mb-2">Assay & Lab Data</h3>
+          <p class="text-gray-500 text-sm">Automated assay import, outlier detection, grade-tonnage curve generation, histogram and variogram plots.</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+          <i class="fa-solid fa-map-location-dot text-accent text-2xl mb-4"></i>
+          <h3 class="font-bold text-primary mb-2">Spatial Data</h3>
+          <p class="text-gray-500 text-sm">Easting/northing/elevation handling, block model data processing, GeoPandas visualisation.</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+          <i class="fa-solid fa-clipboard-list text-accent text-2xl mb-4"></i>
+          <h3 class="font-bold text-primary mb-2">Shift Reporting</h3>
+          <p class="text-gray-500 text-sm">Automated shift report generation from operational data. PDF and dashboard outputs for supervisors and management.</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+          <i class="fa-solid fa-scale-balanced text-accent text-2xl mb-4"></i>
+          <h3 class="font-bold text-primary mb-2">Reconciliation</h3>
+          <p class="text-gray-500 text-sm">Mine-to-mill reconciliation, resource vs reserve vs production variance tracking and reporting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 5: CONSULTING ──────────────────────────────────────────── -->
+  <section id="consulting" class="py-20 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-solid fa-lightbulb text-primary text-3xl"></i>
+        </div>
+        <span class="text-accent font-semibold text-sm uppercase tracking-widest">Service 05</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-1 mb-4">Problem Solving & Consulting</h2>
+        <p class="text-gray-500 leading-relaxed mb-6">
+          Not every data problem fits a standard solution. We work with you to understand the root cause,
+          design a tailored approach, and implement a fix that lasts.
+        </p>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Data strategy workshops</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Root cause analysis for reporting failures</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Legacy system assessment & migration planning</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Tool selection guidance (which BI tool, which database)</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Team upskilling and knowledge transfer</li>
+        </ul>
+        <a href="contact.html" class="mt-8 inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-light transition">
+          Book a Consultation
+        </a>
+      </div>
+      <div class="space-y-4">
+        <div class="bg-white rounded-2xl p-6 shadow border border-gray-100 flex gap-5 items-start">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="text-accent font-bold">01</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-primary mb-1">Discovery Call</h4>
+            <p class="text-gray-500 text-sm">We listen to your challenge and map out the data landscape.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow border border-gray-100 flex gap-5 items-start">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="text-accent font-bold">02</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-primary mb-1">Proposal & Scope</h4>
+            <p class="text-gray-500 text-sm">Clear deliverables, timeline, and fixed-price quote — no surprises.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow border border-gray-100 flex gap-5 items-start">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="text-accent font-bold">03</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-primary mb-1">Build & Deliver</h4>
+            <p class="text-gray-500 text-sm">We build, test, and hand over with full documentation and training.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 6: DATA GOVERNANCE ────────────────────────────────────── -->
+  <section id="governance" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+      <div class="bg-primary rounded-2xl p-8 text-white">
+        <h3 class="text-lg font-bold text-accent mb-6">Data Quality Dimensions We Address</h3>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-sm">Completeness</span>
+            <div class="w-40 bg-white/20 rounded-full h-2"><div class="bg-accent h-2 rounded-full w-11/12"></div></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm">Accuracy</span>
+            <div class="w-40 bg-white/20 rounded-full h-2"><div class="bg-accent h-2 rounded-full w-10/12"></div></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm">Consistency</span>
+            <div class="w-40 bg-white/20 rounded-full h-2"><div class="bg-accent h-2 rounded-full w-9/12"></div></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm">Timeliness</span>
+            <div class="w-40 bg-white/20 rounded-full h-2"><div class="bg-accent h-2 rounded-full w-11/12"></div></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm">Validity</span>
+            <div class="w-40 bg-white/20 rounded-full h-2"><div class="bg-accent h-2 rounded-full w-10/12"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-solid fa-shield-halved text-primary text-3xl"></i>
+        </div>
+        <span class="text-accent font-semibold text-sm uppercase tracking-widest">Service 06</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-1 mb-4">Data Quality & Governance</h2>
+        <p class="text-gray-500 leading-relaxed mb-6">
+          Bad data leads to bad decisions. We implement validation frameworks, data profiling routines,
+          and governance policies that catch issues at the source — before they reach your reports.
+        </p>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Automated data validation checks in Python</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Data profiling reports (nulls, outliers, duplicates)</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Data dictionary and lineage documentation</li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i> Access control and audit trail setup</li>
+        </ul>
+        <a href="contact.html" class="mt-8 inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-light transition">
+          Enquire About This Service
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-accent">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold text-white mb-4">Not Sure Which Service You Need?</h2>
+      <p class="text-white/80 text-lg mb-8">Tell us your challenge — we'll help you find the right solution.</p>
+      <a href="contact.html" class="inline-block bg-white text-accent font-bold px-10 py-4 rounded-xl hover:shadow-xl transition text-lg">
+        Get In Touch
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-primary-dark text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
+            <i class="fa-solid fa-database text-white text-xs"></i>
+          </div>
+          <span class="text-white font-bold text-lg">DataVault <span class="text-accent">Solutions</span></span>
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs">Transforming raw operational data into actionable intelligence for mining and resource companies.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Services</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#warehousing" class="hover:text-accent transition">Data Warehousing</a></li>
+          <li><a href="#reporting"   class="hover:text-accent transition">BI & Reporting</a></li>
+          <li><a href="#etl"         class="hover:text-accent transition">ETL Pipelines</a></li>
+          <li><a href="#mining"      class="hover:text-accent transition">Mining Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html"   class="hover:text-accent transition">About Us</a></li>
+          <li><a href="contact.html" class="hover:text-accent transition">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 mt-10 pt-6 border-t border-white/10 text-center text-sm">
+      &copy; 2025 DataVault Solutions. All rights reserved. &mdash; <em>Company name placeholder &mdash; to be updated.</em>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
